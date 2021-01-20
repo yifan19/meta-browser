@@ -16,7 +16,6 @@ SRC_URI += " \
         file://add_internal_define_armv7ve.patch \
         file://delete_not_yet_released_clang_warnings.patch \
         file://chromium-Move-CharAllocator-definition-to-a-header-f.patch \
-        file://remove-enable-dse-memoryssa-command-line-flag.patch \
         file://0003-Fix-sandbox-Aw-snap-for-syscalls-403-and-407.patch \
         file://0001-add-missing-cstring-include.patch \
         file://0001-drop-dep-on-ui-ozone-for-building-without-ozone.patch \
