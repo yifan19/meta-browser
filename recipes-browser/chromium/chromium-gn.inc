@@ -23,6 +23,7 @@ SRC_URI += " \
         file://0001-Fix-local-build.patch \
         file://0001-IWYU-ui-CursorFactory-is-required-without-Ozone.patch \
         file://0001-RandBytes-Stop-including-sys-random.h-on-Linux.patch \
+        file://0001-remove-link-to-libatomic-from-BUILD.gn.patch \
 "
 
 SRC_URI_append_libc-musl = "\
@@ -97,6 +98,12 @@ BUILD_AR_toolchain-clang = "llvm-ar"
 BUILD_CC_toolchain-clang = "clang"
 BUILD_CXX_toolchain-clang = "clang++"
 BUILD_LD_toolchain-clang = "clang"
+
+# Since chromium uses clang as toolchain and clang delegates atomics to
+# runtime library instead of builtins, we link with latomic in TARGET_LDFLAGS
+# rather than in BUILD.gn, to avoid build failure due to no libatomic on host
+# (such as CentOS 8).
+TARGET_LDFLAGS_append_toolchain-clang = " -latomic"
 
 PACKAGECONFIG ??= "use-egl"
 
@@ -470,3 +477,4 @@ PACKAGE_DEBUG_SPLIT_STYLE = "debug-without-src"
 
 # There is no need to ship empty -dev packages.
 ALLOW_EMPTY_${PN}-dev = "0"
+
