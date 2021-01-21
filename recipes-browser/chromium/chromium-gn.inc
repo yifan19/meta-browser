@@ -23,6 +23,7 @@ SRC_URI += " \
         file://0001-Fix-local-build.patch \
         file://0001-IWYU-ui-CursorFactory-is-required-without-Ozone.patch \
         file://0001-RandBytes-Stop-including-sys-random.h-on-Linux.patch \
+        file://0001-link-atomic-for-target-only.patch \
 "
 
 SRC_URI_append_libc-musl = "\
