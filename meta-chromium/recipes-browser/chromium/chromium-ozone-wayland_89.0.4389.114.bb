@@ -1,6 +1,6 @@
 require chromium-gn.inc
 
-REQUIRED_DISTRO_FEATURES = "wayland"
+REQUIRED_DISTRO_FEATURES += "wayland"
 
 DEPENDS += "\
         at-spi2-atk \

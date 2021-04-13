@@ -45,6 +45,8 @@ SRC_URI_append_libc-musl = "\
     file://musl/0020-Fix-tab-crashes-on-musl.patch \
 "
 
+REQUIRED_DISTRO_FEATURES = "opengl"
+
 # Append instead of assigning; the gtk-icon-cache class inherited above also
 # adds packages to DEPENDS.
 DEPENDS += " \

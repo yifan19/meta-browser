@@ -1,6 +1,6 @@
 require chromium-gn.inc
 
-REQUIRED_DISTRO_FEATURES = "x11"
+REQUIRED_DISTRO_FEATURES += "x11"
 
 DEPENDS += "\
         libx11 \
